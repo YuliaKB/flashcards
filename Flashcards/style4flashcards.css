@@ -1,0 +1,31 @@
+body { background-image: url(world.png);
+align-content: center}
+h1 { font-size: 7vmin; text-align: center; color: #ff7a7a; font-weight: bold;}
+p { font-size: 3vmin; font-family: 'Lobster', cursive; font-style: normal; align-content: center}
+
+.grid{  display:grid; justify-items: center; grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 1px; row-gap: 10px;
+}
+.card { width: 20vmin;
+    height: 20vmin;
+    background: linear-gradient(#f5ca67,#2af598);
+    border: 3px solid #ccc;
+    padding: 5px;
+    text-align: center;
+    position: relative;
+    transition: all 1s linear;
+    transform-style: preserve-3d;
+}
+.front,
+.back { height: 100%; width: 100%; display: flex;
+    justify-content: center; align-items: center;
+    border-radius: 1px; position: absolute;
+}
+.front { z-index: 2;
+    backface-visibility: hidden;
+}
+.back {   backface-visibility: hidden ; z-index: 1; transform: rotateY(180deg);
+}
+.container:hover .card{transform: rotateY(180deg)}
+.container {perspective: 1000px}
